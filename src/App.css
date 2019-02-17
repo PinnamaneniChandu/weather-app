@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.red {
+  color: rgb(177, 31, 31);
+}
+.snow {
+  color: gray;
+}
+.moderate {
+  color: green;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -23,6 +32,17 @@
   color: #61dafb;
 }
 
+.box {
+  box-sizing: content-box;
+  width: 100%;
+  border: solid #c5c6d6 10px;
+  padding: 1px;
+  overflow-wrap: break-word;
+}
+
+.row:after {
+  content: '';
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

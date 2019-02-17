@@ -1,0 +1,2 @@
+create-react-app weather-app
+npm i react-router-dom redux react-redux redux-thunk thunk reactstrap bootstrap
