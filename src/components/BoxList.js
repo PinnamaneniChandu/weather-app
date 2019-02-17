@@ -28,6 +28,7 @@ export class BoxList extends Component {
           this.setState({ weatherList: list });
         })
         .catch(err => this.setState({ error: err }));
+      return null;
     });
   }
 

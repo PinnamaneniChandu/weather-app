@@ -2,18 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { API_KEY, ROOT_URL } from './consts';
-import {
-  Card,
-  CardText,
-  CardBody,
-  CardTitle,
-  CardSubtitle,
-  Button,
-  Col,
-  Row,
-  CardImg,
-  Badge
-} from 'reactstrap';
+import { Card, CardBody, Button, Col, Row, Badge } from 'reactstrap';
 import Spinner from './Spinner';
 
 export class BoxItem extends Component {
@@ -68,9 +57,15 @@ export class BoxItem extends Component {
         let color = this.setColor(data);
         this.setState({ zipcode, weather: data, color });
       })
-      .catch(err => this.setState({ error: err }));
+      .catch(err =>
+        this.setState({
+          error: err,
+          weather: { error: { message: 'No such city' } }
+        })
+      );
   }
   render() {
+    console.log(this.state);
     let output = this.state.weather ? (
       <div className="box">
         <Card>
