@@ -32,9 +32,9 @@ export class BoxItem extends Component {
     let color = 'primary';
     const temp = Number(weather.current.temp_f);
     if (temp <= 30) {
-      color = 'snow';
+      color = 'gray';
     } else if (temp > 30 && temp < 50) {
-      color = 'moderate';
+      color = 'green';
     } else if (temp >= 50) {
       color = 'red';
     }
@@ -67,7 +67,7 @@ export class BoxItem extends Component {
   render() {
     console.log(this.state);
     let output = this.state.weather ? (
-      <div className="box">
+      <div className="box" style={{ borderColor: this.state.color }}>
         <Card>
           <CardBody>
             <Row>
@@ -91,7 +91,10 @@ export class BoxItem extends Component {
             ) : (
               <React.Fragment>
                 <h3>
-                  <Badge color={this.state.color} className={this.state.color}>
+                  <Badge
+                    color={this.state.color}
+                    style={{ color: this.state.color }}
+                  >
                     {this.state.weather.location.name}{' '}
                     {new Date(this.state.weather.location.localtime).getHours()}
                     {'-'}
@@ -101,7 +104,10 @@ export class BoxItem extends Component {
                   </Badge>
                 </h3>
                 <h4>
-                  <Badge color={this.state.color} className={this.state.color}>
+                  <Badge
+                    color={this.state.color}
+                    style={{ color: this.state.color }}
+                  >
                     {this.state.weather.current.condition.text}{' '}
                     {this.state.weather.current.temp_f}
                   </Badge>
@@ -109,7 +115,10 @@ export class BoxItem extends Component {
                   <img src={this.state.weather.current.condition.icon} />
                 </h4>
                 <h5>
-                  <Badge color={this.state.color} className={this.state.color}>
+                  <Badge
+                    color={this.state.color}
+                    style={{ color: this.state.color }}
+                  >
                     Wind: {this.state.weather.current.wind_mph} MPH -{' '}
                     {this.state.weather.current.wind_kph} KPH
                     {' - '}

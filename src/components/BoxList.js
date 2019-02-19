@@ -64,7 +64,7 @@ export class BoxList extends Component {
       );
 
     return (
-      <div className="box">
+      <div>
         <Container>{output}</Container>
       </div>
     );
